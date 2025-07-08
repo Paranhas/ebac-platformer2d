@@ -1,9 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
+    public string triggerDeath = "Death";
+    public float timeToDestroy = 0.3f;
+    private void Awake()
+    {
+        if(healthBase != null)
+        {
+            healthBase.OnKill += OnEnemyKill;
+        }
+    }
     public int damage = 10;
     public Animator animator;
     public string triggerAttack = "Attack";
@@ -25,5 +35,16 @@ public class EnemyBase : MonoBehaviour
     public void Damage(int amount)
     {
         healthBase.Damage(amount);
+    }
+    private void OnEnemyKill()
+    {
+        healthBase.OnKill -= OnEnemyKill;
+        PlayDeathAnimation();
+        Destroy(gameObject, timeToDestroy);
+    }
+
+    private void PlayDeathAnimation()
+    {
+        animator.SetTrigger(triggerDeath);
     }
 }

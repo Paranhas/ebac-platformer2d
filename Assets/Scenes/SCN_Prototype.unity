@@ -2674,6 +2674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cb248c0a617bb4dbb7f77c6e4fa2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerDeath: Death
+  timeToDestroy: 0.1
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
@@ -2972,6 +2974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cb248c0a617bb4dbb7f77c6e4fa2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerDeath: Death
+  timeToDestroy: 0.1
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
@@ -3133,6 +3137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cb248c0a617bb4dbb7f77c6e4fa2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerDeath: Death
+  timeToDestroy: 1
   damage: 10
   animator: {fileID: 1662019375}
   triggerAttack: Attack
@@ -3206,9 +3212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5a2763d67772349b30407efcf5e3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLife: 10
-  destroyOnKill: 1
-  delayToKill: 0
+  startLife: 3
+  destroyOnKill: 0
+  delayToKill: 0.1
   _flashColor: {fileID: 0}
 --- !u!1 &1121584056
 GameObject:
@@ -5136,7 +5142,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3175313615152289460, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   m_PrefabInstance: {fileID: 323214831}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1782727876}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df44f16a451eee44da9f51d371c16f55, type: 3}
@@ -5282,6 +5288,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1782727876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 323214831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1782727878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782727876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e034ab2fdf6299d43893cd2f6fdb2739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1976123875}
 --- !u!1 &1833426540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5561,8 +5585,10 @@ MonoBehaviour:
   ease: 27
   boolRun: Run
   boolJump: Jump
+  triggerDeath: Death
   animator: {fileID: 244353737}
   playerSwipeDuration: 0.1
+  _healthBase: {fileID: 1976123880}
 --- !u!50 &1976123876
 Rigidbody2D:
   serializedVersion: 4

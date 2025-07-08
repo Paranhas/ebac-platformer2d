@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -22,9 +23,26 @@ public class Player : MonoBehaviour
     [Header("Animation Player")]
     public string boolRun = "Run";
     public string boolJump = "Jump";
+    public string triggerDeath = "Death";
     public Animator animator;
     public float playerSwipeDuration = .1f;
     private float _currentSpeed;
+    public HealthBase _healthBase;
+
+    public void Awake()
+    {
+        if (_healthBase != null) 
+        {
+            _healthBase.OnKill += OnPlayerKill;
+        }
+
+    }
+
+    private void OnPlayerKill()
+    {
+        _healthBase.OnKill -= OnPlayerKill;
+        animator.SetTrigger(triggerDeath);
+    }
 
     public void Update()
     {
@@ -101,5 +119,9 @@ public class Player : MonoBehaviour
                 animator.SetBool(boolJump, true);
                 myRigidbody.transform.DOScaleY(jumpScaley, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
                 myRigidbody.transform.DOScaleX(jumpScalex, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+    }
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 }
