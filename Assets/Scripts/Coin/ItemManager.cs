@@ -8,7 +8,7 @@ using TMPro;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    public int coin;
+    public SOInt coin;
     public TextMeshProUGUI uiTextCoins;
     private void Start()
     {
@@ -17,16 +17,16 @@ public class ItemManager : Singleton<ItemManager>
 
     private void Reset()
     {
-        coin = 0;
+        coin.value = 0;
         UpdateUI();
     }
     public void AddCoins(int amount = 1) 
     {
-        coin += amount;
+        coin.value += amount;
         UpdateUI();
     }
     private void UpdateUI()
     {
-        uiTextCoins.text = coin.ToString();
+        //uiTextCoins.text = coin.ToString();
     }
 }
