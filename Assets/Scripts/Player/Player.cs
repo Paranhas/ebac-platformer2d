@@ -7,27 +7,6 @@ using System;
 public class Player : MonoBehaviour
 {
 
-
-    /*public SOFloat soJumpScaleY;
-    public SOFloat soJumpScaleX;
-    public SOFloat soAnimationDuration;
-    [Header("Speed Setup")]
-    public Vector2 friction = new Vector2(.1f, 0);
-    public float speed;
-    public float speedRun;
-    public float forceJump = 25;
-
-    [Header("Animation Setup")]
-    public float jumpScaleY = 1.5f;
-    public float jumpScaleX = 0.7f;
-    public float animationDuration = .3f;
-    public Ease ease = Ease.OutBack;
-
-    [Header("Animation Player")]
-    public string boolRun = "Run";
-    public string triggerDeath = "Death";
-    public float playerSwipeDuration = .1f;
-    public Animator animator;*/
     public Rigidbody2D myRigidbody;
     public HealthBase _healthBase;
     
@@ -36,8 +15,6 @@ public class Player : MonoBehaviour
 
     public bool _isRunning;
     private float _currentSpeed;
-
-    public string boolJump = "Jump";
     private Animator _currentPlayer;
     
 
@@ -114,7 +91,7 @@ public class Player : MonoBehaviour
     }
     private void HandleJump()
     {
-        _currentPlayer.SetBool(boolJump, false);
+        _currentPlayer.SetBool(soPlayerSetup.boolJump, false);
         if (Input.GetKeyDown(KeyCode.Space))
         { 
             myRigidbody.velocity = Vector2.up * soPlayerSetup.forceJump;
@@ -128,7 +105,7 @@ public class Player : MonoBehaviour
     private void HandleJumpScale()
     {
                 myRigidbody.transform.DOScaleX(-1, soPlayerSetup.playerSwipeDuration);
-                _currentPlayer.SetBool(boolJump, true);
+                _currentPlayer.SetBool(soPlayerSetup.boolJump, true);
                 myRigidbody.transform.DOScaleY(soPlayerSetup.jumpScaleY, soPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
                 myRigidbody.transform.DOScaleX(soPlayerSetup.jumpScaleX, soPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
     }

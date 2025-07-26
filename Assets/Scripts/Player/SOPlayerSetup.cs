@@ -15,6 +15,7 @@ public class SOPlayerSetup : ScriptableObject
     [Header("Animation Setup")]
     public float jumpScaleY = 1.5f;
     public float jumpScaleX = 0.7f;
+    public string boolJump = "Jump";
     public float animationDuration = .3f;
     public Ease ease = Ease.OutBack;
 
