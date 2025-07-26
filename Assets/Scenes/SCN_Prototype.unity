@@ -881,11 +881,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &244353737 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6413013834153556191, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
-  m_PrefabInstance: {fileID: 323214831}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &244353738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
@@ -1057,21 +1052,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976123879}
     m_Modifications:
-    - target: {fileID: 6413013834153556191, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1782727878, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1976123875}
     - target: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5158,7 +5145,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3175313615152289460, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   m_PrefabInstance: {fileID: 323214831}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782727876}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df44f16a451eee44da9f51d371c16f55, type: 3}
@@ -5304,24 +5291,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1782727876 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
-  m_PrefabInstance: {fileID: 323214831}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1782727878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782727876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e034ab2fdf6299d43893cd2f6fdb2739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1976123875}
 --- !u!1 &1833426540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5591,20 +5560,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 1976123876}
-  friction: {x: 1.5, y: 0}
-  speed: 10
-  speedRun: 21
-  forceJump: 25
-  soJumpScaleY: {fileID: 11400000, guid: 13624ac76bd0db24fb1b5e2a99e8777c, type: 2}
-  soJumpScaleX: {fileID: 11400000, guid: 76b8b02e16db1ad4299d8b3fafe3bae7, type: 2}
-  soAnimationDuration: {fileID: 11400000, guid: 3a146f7bd0628744da2b3a876fd5739e, type: 2}
-  ease: 27
-  boolRun: Run
-  boolJump: Jump
-  triggerDeath: Death
-  animator: {fileID: 244353737}
-  playerSwipeDuration: 0.1
   _healthBase: {fileID: 1976123880}
+  soPlayerSetup: {fileID: 11400000, guid: c734aeb822f9919409b16acadcaf630d, type: 2}
+  _isRunning: 0
+  boolJump: Jump
 --- !u!50 &1976123876
 Rigidbody2D:
   serializedVersion: 4
