@@ -15,16 +15,17 @@ public class GunBase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             _currentCoroutine = StartCoroutine(StartShoot());
-        }else if (Input.GetKeyUp(KeyCode.S))
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
         {
-            if(_currentCoroutine != null)
+            if (_currentCoroutine != null)
             {
                 StopCoroutine(_currentCoroutine);
             }
         }
     }
 
-   IEnumerator StartShoot()
+    IEnumerator StartShoot()
     {
         while (true)
         {
@@ -34,9 +35,17 @@ public class GunBase : MonoBehaviour
     }
 
     public void Shoot()
+     {
+         var projectile = Instantiate(prefabProjectile);
+         projectile.transform.position = positionToShoot.position;
+         projectile.side = playerSideReference.transform.localScale.x;
+     }
+   
+    private void Start()
     {
-        var projectile = Instantiate(prefabProjectile);
-        projectile.transform.position = positionToShoot.position;
-        projectile.side = playerSideReference.transform.localScale.x;
+        // Tenta atribuir automaticamente a referência do player se estiver vazia
+        if (playerSideReference == null)
+            playerSideReference = transform.root; // ou use transform.parent, se preferir
     }
+
 }

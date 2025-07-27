@@ -15,7 +15,8 @@ public class ProjectileBase : MonoBehaviour
     }
     private void Update()
     {
-        transform.Translate(direction*Time.deltaTime*side);
+        transform.Translate(direction * Time.deltaTime * side);
+    
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
