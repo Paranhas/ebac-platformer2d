@@ -7,6 +7,7 @@ public class SOUIIntUpdate : MonoBehaviour
 {
     public SOInt soInt;
     public TextMeshProUGUI uiTextValue;
+    public TextMeshProUGUI uiTextValuePower;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,6 @@ public class SOUIIntUpdate : MonoBehaviour
     void Update()
     {
         uiTextValue.text = soInt.value.ToString();
+        uiTextValuePower.text = soInt.valuePower.ToString();
     }
 }

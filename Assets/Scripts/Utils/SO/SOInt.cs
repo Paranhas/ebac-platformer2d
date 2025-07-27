@@ -6,4 +6,5 @@ using UnityEngine;
 public class SOInt : ScriptableObject
 {
     public int value;
+    public int valuePower;
 }
