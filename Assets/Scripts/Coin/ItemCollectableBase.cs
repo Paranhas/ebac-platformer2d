@@ -6,12 +6,17 @@ using UnityEngine;
 public class ItemCollectableBase : MonoBehaviour
 {
     public string compareTag = "Player";
+    public ParticleSystem particleSystem;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag(compareTag))
         {
             Collect();
         }
+    }
+    private void Awake()
+    {
+        if(particleSystem == null)particleSystem.transform.SetParent(null);
     }
 
     protected virtual void Collect()
@@ -23,6 +28,6 @@ public class ItemCollectableBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-      
+        if (particleSystem != null) { particleSystem.Play(); }
     }
 }
