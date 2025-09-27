@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class ItemCollectableBase : MonoBehaviour
 {
+    [Header("Sounds")]
+    public AudioSource audioSource;
+
     public string compareTag = "Player";
     public ParticleSystem particleSystem;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,5 +32,6 @@ public class ItemCollectableBase : MonoBehaviour
     protected virtual void OnCollect()
     {
         if (particleSystem != null) { particleSystem.Play(); }
+        if(audioSource != null) { audioSource.Play(); }
     }
 }
