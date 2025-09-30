@@ -93,7 +93,11 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 5f6b243f49b031144a7ef541a9d38e89
+    name: VolumeAmbience
+  - guid: 40c0ae42c0ecad9458d84d18d985ceaa
+    name: MyExposedParam 1
   m_AudioMixerGroupViews:
   - guids:
     - c8aea6888411f37429ab9f44b62905e4
@@ -147,7 +151,10 @@ AudioMixerSnapshotController:
   m_Name: Ingame
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 5e15aca822c81a243b07b09b7e2fc99a
-  m_FloatValues: {}
+  m_FloatValues:
+    932b8f41c3d556242ab342dc93bf41d0: 2.910851
+    40c0ae42c0ecad9458d84d18d985ceaa: -14.816608
+    5f6b243f49b031144a7ef541a9d38e89: -20
   m_TransitionOverrides: {}
 --- !u!243 &1511897141989571567
 AudioMixerGroupController:
