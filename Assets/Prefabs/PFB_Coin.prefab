@@ -148,6 +148,7 @@ MonoBehaviour:
   audioSource: {fileID: 4231209981605200656}
   compareTag: Player
   particleSystem: {fileID: 963489808581834054}
+  collider: {fileID: 205147298992704297}
 --- !u!1 &3805753013981099317
 GameObject:
   m_ObjectHideFlags: 0
